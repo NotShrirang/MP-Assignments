@@ -23,7 +23,7 @@
 
 section .data
     nwline db 10
-    m0 db 10,10,"Program to calculate factorial of a given number.",10,10
+    m0 db 10,10,"Program to calculate factorial of a given number.",10
     l0 equ $-m0
 
     m2 db 10,"Enter Number (2 digit HEX no) : "
@@ -71,12 +71,13 @@ facto:
 ahead:
     dec rcx
     call facto
-    exit2:pop rcx
+
+exit2:
+    pop rcx
     mov rax,rcx
     mul qword[factorial]
     mov qword[factorial],rax
     ret
-
 
 ;; Procedure to get a 2 digit hex no from user; number returned in rax
 getnum:
