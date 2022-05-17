@@ -1,6 +1,6 @@
 ; Display Procedure
 
-display64 : 
+display64:
     mov rbx, rax
     mov rdi, result
     mov cx, 16
